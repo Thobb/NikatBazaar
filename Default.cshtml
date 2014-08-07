@@ -4,43 +4,106 @@
 }
 
 @section featured {
-<section class="featured">
-    <div class="content-wrapper">
-        <hgroup class="title">
-            <h1>@Page.Title.</h1>
-            <h2>Modify this template to jump-start your ASP.NET Web Pages application.</h2>
-        </hgroup>
-        <p>
-            To learn more about ASP.NET Web Pages, visit
-            <a href="http://asp.net/webpages" title="ASP.NET Web Pages Website">http://asp.net/webpages</a>.
-            The page features <mark>videos, tutorials, and samples</mark> to help you get the most from ASP.NET Web Pages.
-            If you have any questions about ASP.NET Web Pages, visit
-            <a href="http://forums.iis.net/1166.aspx" title="ASP.NET Web Pages Forum">our forums</a>.
-        </p>
-    </div>
+<section class="featured">    
+    <div id="searchBoxContainer">
+        <nav id="topNav">
+            <a href="#" id="category-menu-btn">Categories</a>
+            <a href="#" id="make-a-list-btn">Make a list</a>
+            <a href="#" id="window-shopping-btn">Window shopping</a>
+            <a href="#" id="home-btn">Home</a>
+        </nav><!-- #topNav -->
+        <form id="searchForm" action="./search">
+            <span>Look for</span>
+            <input type="text" placeholder="item name, e.g. pencil" name="itemSearchStr" id="itemSearchStr" />
+            <span id="searchButton">Search</span>
+        </form><!-- #searchForm -->
+        <div id="usrLocation">
+            <b>near</b>
+            <span id="userAddress" title="Click to change or refine service location">Fetching service location</span>
+        </div>
+    </div><!-- #searchBoxContainer -->
+    <div id="userProvidedLocation">
+        <div id="upl_title">
+            <span class="title">Provide a location</span>
+            <span id="upl_controls">
+                <span id="flip-map">View on map</span>
+                <span id="upl_close">Set</span>
+            </span>
+        </div><!-- #upl_title -->
+        <div id="flip-map-container">
+            <div id="flip-map-card">
+                <div id="map-front">
+                    <div id="user-address-form-title">This is the location around which markets / vendors are searched.</div>
+                    <form id="user-address-form">
+                        <ul>
+                            <li>
+                                <label for="addr-line-1">Address line 1</label>
+                                <input type="text" id="addr-line-1" name="addr-line-2" placeholder="House number, street" />
+                            </li>
+                            <li>
+                                <label for="addr-line-2">Address line 2</label>
+                                <input type="text" id="addr-line-2" name="addr-line-2" placeholder="Colony, sector" />
+                            </li>
+                            <li>
+                                <label for="pin-code">Pin code</label>
+                                <input type="text" id="pin-code" name="pin-code" placeholder="Pin code, eg 201301" />
+                            </li>
+                            <li>
+                                <label for="state" title="List of states where we offer services">State</label>
+                                <select id="state" name="state"></select>
+                            <li>
+                                <label for="city" title="List of cities where we offer services">City</label>
+                                <select id="city" name="city"></select>
+                            </li>
+                            <li>
+                                <label for="service-location-tag" title="Name this location for future use, or leave blank for one time use">Service location tag</label>
+                                <input type="text" id="service-location-tag" name="service-location-tag" placeholder="eg home, friend's place .." />
+                            </li>
+                        </ul>
+                        <input id="submit-user-address-form" type="submit" value="Set service location">
+                    </form><!-- #user-address-form -->
+                </div><!-- #map-front -->
+                <div id="map-back">
+                    <div id="mapContainer"><div id="mapCanvas"></div></div>
+                </div><!-- #map-back -->
+            </div><!-- #flip-map-card -->
+        </div><!-- #flip-map-container -->
+        <div id="upl_notifications"></div><!-- #upl_notifications -->
+    </div><!-- #userProvidedLocation -->
+    <div id="category-menu">
+        <ul>
+            <li><a href="#">Grocery</a></li>
+            <li><a href="#">Home Appliances</a></li>
+            <li><a href="#">Electronics</a></li>
+            <li><a href="#">Stationary</a></li>
+            <li><a href="#">Medicines</a></li>
+            <li><a href="#">Eateries</a></li>
+        </ul>
+    </div><!-- #category-menu -->
+    <div id="make-a-list">
+        <div id="header-make-a-list">
+            <span id="close-make-a-list">X</span>
+        </div>
+        <div id="Add-Item">
+            <ul>
+                <li>asdasf
+                </li>
+            </ul>
+        </div>
+        <div id="Search-item">
+            <ul>
+                <li>
+                </li>
+            </ul>
+        </div>
+        <div id="Price-list" >
+            <ul>
+                <li>
+                </li>
+            </ul>
+        </div>
+    </div><!-- #make-a-list -->
+    <div id="window-shopping">
+    </div><!-- #window-shopping -->
 </section>
 }
-
-<h3>We suggest the following:</h3>
-
-<ol class="round">
-    <li class="one">
-        <h5>Getting Started</h5>
-        ASP.NET Web Pages and the new Razor syntax provide a fast, approachable, and lightweight way to combine server code with HTML
-        to create dynamic web content. Connect to databases, add video, link to social networking sites, and include many more features
-        that let you create beautiful sites using the latest web standards.
-        <a href="http://go.microsoft.com/fwlink/?LinkId=245139">Learn more…</a>
-    </li>
-
-    <li class="two">
-        <h5>Add NuGet packages and jump start your coding</h5>
-        NuGet makes it easy to install and update free libraries and tools.
-        <a href="http://go.microsoft.com/fwlink/?LinkId=245140">Learn more…</a>
-    </li>
-
-    <li class="three">
-        <h5>Find Web Hosting</h5>
-        You can easily find a web hosting company that offers the right mix of features and price for your applications.
-        <a href="http://go.microsoft.com/fwlink/?LinkId=245143">Learn more…</a>
-    </li>
-</ol>
