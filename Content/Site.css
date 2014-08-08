@@ -343,15 +343,36 @@ header {
 #make-a-list {
     display: none;
     position: absolute;
-    left: 0;
-    top: 0;
+    left: 20px;
+    top: 20px;
     z-index: 10;
     background-color: #fff;
     border: 3px solid #aaa;
     border-radius: 3px;
+    min-width: 96%;
 }
 #close-make-a-list {
     cursor: pointer;
+    position: absolute;
+    right: -12px;
+    top: -12px;
+    height: 100%;
+}
+#item-list {
+    width: 25%;
+    float: left;
+    height: 100%;
+}
+#item-search {
+    float: left;
+    width: 56%;
+    border-left: 3px solid #aaa;
+    border-right: 3px solid #aaa;
+    height: 100%;
+}
+#bill {
+    float: right;
+    width: 14%;
 }
 /***************  Search page ********************/
 #s-header {
