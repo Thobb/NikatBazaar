@@ -1,0 +1,282 @@
+﻿<!DOCTYPE html>
+    <html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+        <meta name="description" content="<?php echo 'hi'; ?>">
+        <meta name="keywords" content="<?php echo 'there'; ?>">
+        <title><?php echo "Search term"; ?></title>
+        <link rel="stylesheet" type="text/css" href="/assets/css/style.css" />
+        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+        <script type="text/javascript" src="/assets/js/jquery-1.11.1.min.js"></script>
+        <script type="text/javascript" src="/assets/js/scripts.js"></script>
+    </head>
+    <body>
+        <header id="s-header">
+            <form id="s-search-form" action="/nikatBazaar/search">
+                <span>Look for</span>
+                <input type="text" placeholder="item name, e.g. pencil" name="itemSearchStr" id="itemSearchStr" />
+                <span id="s-searchButton">Search</span>
+            </form>
+            <div id="s-service-location"></div>
+            <nav id="s-top-nav">
+            </nav>
+        </header>
+        <div id="s-content">
+            <div id="s-side-bar">
+                <div id="s-cat-side-nav-title">Categories</div>
+                <nav id="s-cat-side-nav">
+                    <a href="#" class="s-selected-category">Grocery</a>
+                    <a href="#">Home Appliances</a>
+                    <a href="#">Electronics</a>
+                    <a href="#">Stationary</a>
+                    <a href="#">Medicines</a>
+                    <a href="#">Eateries</a>
+                </nav>
+            </div><!-- #s-side-bar -->
+            <div id="s-main-content">
+                <div id="s-main-content-header">
+                    <div id="s-sort-order">
+                    </div><!-- #s-sort-order -->
+                    <div id="s-filters">
+                    </div><!-- #s-filters -->
+                    <div id="s-presentation">
+                        <span>View results as </span>
+                        <span id="s-selected-presentation"></span>
+                        <ul>
+                            <li>Icon grid - Small</li>
+                            <li>Icon grid - Medium</li>
+                            <li>Icon grid - large</li>
+                            <li>List</li>
+                        </ul>
+                    </div><!-- #s-presentation -->
+                </div><!-- #s-main-content-header -->
+                <div id="s-search-results">
+                    <div class="s-item" data-item-id="a2sdfa34">
+                        <figure>
+                            <img src="/assets/images/100x100.jpg" alt="item name and description" />
+                            <figcaption>
+                                <ul>
+                                    <li class="s-item-price">600</li>
+                                    <li class="s-item-make">India gate basmati rice</li>
+                                    <li class="s-item-name">rice</li>
+                                    <li class="s-item-quantity">10kg</li>
+                                    <li class="s-item-vendor">shubham mart</li>
+                                </ul>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div class="s-item" data-item-id="a2sdfa34">
+                        <figure>
+                            <img src="/assets/images/100x100.jpg" alt="item name and description" />
+                            <figcaption>
+                                <ul>
+                                    <li class="s-item-price">600</li>
+                                    <li class="s-item-make">India gate basmati rice</li>
+                                    <li class="s-item-name">rice</li>
+                                    <li class="s-item-quantity">10kg</li>
+                                    <li class="s-item-vendor">shubham mart</li>
+                                </ul>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div class="s-item" data-item-id="a2sdfa34">
+                        <figure>
+                            <img src="/assets/images/100x100.jpg" alt="item name and description" />
+                            <figcaption>
+                                <ul>
+                                    <li class="s-item-price">600</li>
+                                    <li class="s-item-make">India gate basmati rice</li>
+                                    <li class="s-item-name">rice</li>
+                                    <li class="s-item-quantity">10kg</li>
+                                    <li class="s-item-vendor">shubham mart</li>
+                                </ul>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div class="s-item" data-item-id="a2sdfa34">
+                        <figure>
+                            <img src="/assets/images/100x100.jpg" alt="item name and description" />
+                            <figcaption>
+                                <ul>
+                                    <li class="s-item-price">600</li>
+                                    <li class="s-item-make">India gate basmati rice</li>
+                                    <li class="s-item-name">rice</li>
+                                    <li class="s-item-quantity">10kg</li>
+                                    <li class="s-item-vendor">shubham mart</li>
+                                </ul>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div class="s-item" data-item-id="a2sdfa34">
+                        <figure>
+                            <img src="/assets/images/100x100.jpg" alt="item name and description" />
+                            <figcaption>
+                                <ul>
+                                    <li class="s-item-price">600</li>
+                                    <li class="s-item-make">India gate basmati rice</li>
+                                    <li class="s-item-name">rice</li>
+                                    <li class="s-item-quantity">10kg</li>
+                                    <li class="s-item-vendor">shubham mart</li>
+                                </ul>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div class="s-item" data-item-id="a2sdfa34">
+                        <figure>
+                            <img src="/assets/images/100x100.jpg" alt="item name and description" />
+                            <figcaption>
+                                <ul>
+                                    <li class="s-item-price">600</li>
+                                    <li class="s-item-make">India gate basmati rice</li>
+                                    <li class="s-item-name">rice</li>
+                                    <li class="s-item-quantity">10kg</li>
+                                    <li class="s-item-vendor">shubham mart</li>
+                                </ul>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div class="s-item" data-item-id="a2sdfa34">
+                        <figure>
+                            <img src="/assets/images/100x100.jpg" alt="item name and description" />
+                            <figcaption>
+                                <ul>
+                                    <li class="s-item-price">600</li>
+                                    <li class="s-item-make">India gate basmati rice</li>
+                                    <li class="s-item-name">rice</li>
+                                    <li class="s-item-quantity">10kg</li>
+                                    <li class="s-item-vendor">shubham mart</li>
+                                </ul>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div class="s-item" data-item-id="a2sdfa34">
+                        <figure>
+                            <img src="/assets/images/100x100.jpg" alt="item name and description" />
+                            <figcaption>
+                                <ul>
+                                    <li class="s-item-price">600</li>
+                                    <li class="s-item-make">India gate basmati rice</li>
+                                    <li class="s-item-name">rice</li>
+                                    <li class="s-item-quantity">10kg</li>
+                                    <li class="s-item-vendor">shubham mart</li>
+                                </ul>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div class="s-item" data-item-id="a2sdfa34">
+                        <figure>
+                            <img src="/assets/images/100x100.jpg" alt="item name and description" />
+                            <figcaption>
+                                <ul>
+                                    <li class="s-item-price">600</li>
+                                    <li class="s-item-make">India gate basmati rice</li>
+                                    <li class="s-item-name">rice</li>
+                                    <li class="s-item-quantity">10kg</li>
+                                    <li class="s-item-vendor">shubham mart</li>
+                                </ul>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div class="s-item" data-item-id="a2sdfa34">
+                        <figure>
+                            <img src="/assets/images/100x100.jpg" alt="item name and description" />
+                            <figcaption>
+                                <ul>
+                                    <li class="s-item-price">600</li>
+                                    <li class="s-item-make">India gate basmati rice</li>
+                                    <li class="s-item-name">rice</li>
+                                    <li class="s-item-quantity">10kg</li>
+                                    <li class="s-item-vendor">shubham mart</li>
+                                </ul>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div class="s-item" data-item-id="a2sdfa34">
+                        <figure>
+                            <img src="/assets/images/100x100.jpg" alt="item name and description" />
+                            <figcaption>
+                                <ul>
+                                    <li class="s-item-price">600</li>
+                                    <li class="s-item-make">India gate basmati rice</li>
+                                    <li class="s-item-name">rice</li>
+                                    <li class="s-item-quantity">10kg</li>
+                                    <li class="s-item-vendor">shubham mart</li>
+                                </ul>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div class="s-item" data-item-id="a2sdfa34">
+                        <figure>
+                            <img src="/assets/images/100x100.jpg" alt="item name and description" />
+                            <figcaption>
+                                <ul>
+                                    <li class="s-item-price">600</li>
+                                    <li class="s-item-make">India gate basmati rice</li>
+                                    <li class="s-item-name">rice</li>
+                                    <li class="s-item-quantity">10kg</li>
+                                    <li class="s-item-vendor">shubham mart</li>
+                                </ul>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div class="s-item" data-item-id="a2sdfa34">
+                        <figure>
+                            <img src="/assets/images/100x100.jpg" alt="item name and description" />
+                            <figcaption>
+                                <ul>
+                                    <li class="s-item-price">600</li>
+                                    <li class="s-item-make">India gate basmati rice</li>
+                                    <li class="s-item-name">rice</li>
+                                    <li class="s-item-quantity">10kg</li>
+                                    <li class="s-item-vendor">shubham mart</li>
+                                </ul>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div class="s-item" data-item-id="a2sdfa34">
+                        <figure>
+                            <img src="/assets/images/100x100.jpg" alt="item name and description" />
+                            <figcaption>
+                                <ul>
+                                    <li class="s-item-price">600</li>
+                                    <li class="s-item-make">India gate basmati rice</li>
+                                    <li class="s-item-name">rice</li>
+                                    <li class="s-item-quantity">10kg</li>
+                                    <li class="s-item-vendor">shubham mart</li>
+                                </ul>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div class="s-item" data-item-id="a2sdfa34">
+                        <figure>
+                            <img src="/assets/images/100x100.jpg" alt="item name and description" />
+                            <figcaption>
+                                <ul>
+                                    <li class="s-item-price">600</li>
+                                    <li class="s-item-make">India gate basmati rice</li>
+                                    <li class="s-item-name">rice</li>
+                                    <li class="s-item-quantity">10kg</li>
+                                    <li class="s-item-vendor">shubham mart</li>
+                                </ul>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <div class="s-item" data-item-id="a2sdfa34">
+                        <figure>
+                            <img src="/assets/images/100x100.jpg" alt="item name and description" />
+                            <figcaption>
+                                <ul>
+                                    <li class="s-item-price">600</li>
+                                    <li class="s-item-make">India gate basmati rice</li>
+                                    <li class="s-item-name">rice</li>
+                                    <li class="s-item-quantity">10kg</li>
+                                    <li class="s-item-vendor">shubham mart</li>
+                                </ul>
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div><!-- #s-main-content -->
+            </div><!-- #content -->
+    </body>
+</html>
