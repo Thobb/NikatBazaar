@@ -3,13 +3,13 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-        <meta name="description" content="<?php echo 'hi'; ?>">
-        <meta name="keywords" content="<?php echo 'there'; ?>">
-        <title><?php echo "Search term"; ?></title>
-        <link rel="stylesheet" type="text/css" href="/assets/css/style.css" />
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+        <title><"Search term"></title>
+        <link rel="stylesheet" type="text/css" href="~/Content/Site.css" />
         <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
-        <script type="text/javascript" src="/assets/js/jquery-1.11.1.min.js"></script>
-        <script type="text/javascript" src="/assets/js/scripts.js"></script>
+        <script type="text/javascript" src="/Scripts/jquery-1.10.2.min.js"></script>
+        <script type="text/javascript" src="/Scripts/Default.js"></script>
     </head>
     <body>
         <header id="s-header">
@@ -52,9 +52,27 @@
                     </div><!-- #s-presentation -->
                 </div><!-- #s-main-content-header -->
                 <div id="s-search-results">
+                    <%
+                        for(item in searchItems) {
+                    %>
                     <div class="s-item" data-item-id="a2sdfa34">
                         <figure>
-                            <img src="/assets/images/100x100.jpg" alt="item name and description" />
+                            <img src="@item.imagePath" alt="item name and description" />
+                            <figcaption>
+                                <ul>
+                                    <li class="s-item-price">@item.price</li>
+                                    <li class="s-item-make">@item.make</li>
+                                    <li class="s-item-name">@item.name</li>
+                                    <li class="s-item-quantity">@item.quantity</li>
+                                    <li class="s-item-vendor">@item.vendor</li>
+                                </ul>
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <% } %>
+                    <div class="s-item" data-item-id="a2sdfa34">
+                        <figure>
+                            <img src="~/Images/100x100.jpg" alt="item name and description" />
                             <figcaption>
                                 <ul>
                                     <li class="s-item-price">600</li>
@@ -68,7 +86,7 @@
                     </div>
                     <div class="s-item" data-item-id="a2sdfa34">
                         <figure>
-                            <img src="/assets/images/100x100.jpg" alt="item name and description" />
+                            <img src="~/Images/100x100.jpg" alt="item name and description" />
                             <figcaption>
                                 <ul>
                                     <li class="s-item-price">600</li>
@@ -82,7 +100,7 @@
                     </div>
                     <div class="s-item" data-item-id="a2sdfa34">
                         <figure>
-                            <img src="/assets/images/100x100.jpg" alt="item name and description" />
+                            <img src="~/Images/100x100.jpg" alt="item name and description" />
                             <figcaption>
                                 <ul>
                                     <li class="s-item-price">600</li>
@@ -96,7 +114,7 @@
                     </div>
                     <div class="s-item" data-item-id="a2sdfa34">
                         <figure>
-                            <img src="/assets/images/100x100.jpg" alt="item name and description" />
+                            <img src="~/Images/100x100.jpg" alt="item name and description" />
                             <figcaption>
                                 <ul>
                                     <li class="s-item-price">600</li>
@@ -110,7 +128,7 @@
                     </div>
                     <div class="s-item" data-item-id="a2sdfa34">
                         <figure>
-                            <img src="/assets/images/100x100.jpg" alt="item name and description" />
+                            <img src="~/Images/100x100.jpg" alt="item name and description" />
                             <figcaption>
                                 <ul>
                                     <li class="s-item-price">600</li>
@@ -124,7 +142,7 @@
                     </div>
                     <div class="s-item" data-item-id="a2sdfa34">
                         <figure>
-                            <img src="/assets/images/100x100.jpg" alt="item name and description" />
+                            <img src="~/Images/100x100.jpg" alt="item name and description" />
                             <figcaption>
                                 <ul>
                                     <li class="s-item-price">600</li>
@@ -138,7 +156,7 @@
                     </div>
                     <div class="s-item" data-item-id="a2sdfa34">
                         <figure>
-                            <img src="/assets/images/100x100.jpg" alt="item name and description" />
+                            <img src="~/Images/100x100.jpg" alt="item name and description" />
                             <figcaption>
                                 <ul>
                                     <li class="s-item-price">600</li>
@@ -152,7 +170,7 @@
                     </div>
                     <div class="s-item" data-item-id="a2sdfa34">
                         <figure>
-                            <img src="/assets/images/100x100.jpg" alt="item name and description" />
+                            <img src="~/Images/100x100.jpg" alt="item name and description" />
                             <figcaption>
                                 <ul>
                                     <li class="s-item-price">600</li>
@@ -166,7 +184,7 @@
                     </div>
                     <div class="s-item" data-item-id="a2sdfa34">
                         <figure>
-                            <img src="/assets/images/100x100.jpg" alt="item name and description" />
+                            <img src="~/Images/100x100.jpg" alt="item name and description" />
                             <figcaption>
                                 <ul>
                                     <li class="s-item-price">600</li>
@@ -180,7 +198,7 @@
                     </div>
                     <div class="s-item" data-item-id="a2sdfa34">
                         <figure>
-                            <img src="/assets/images/100x100.jpg" alt="item name and description" />
+                            <img src="~/Images/100x100.jpg" alt="item name and description" />
                             <figcaption>
                                 <ul>
                                     <li class="s-item-price">600</li>
@@ -194,7 +212,7 @@
                     </div>
                     <div class="s-item" data-item-id="a2sdfa34">
                         <figure>
-                            <img src="/assets/images/100x100.jpg" alt="item name and description" />
+                            <img src="~/Images/100x100.jpg" alt="item name and description" />
                             <figcaption>
                                 <ul>
                                     <li class="s-item-price">600</li>
@@ -208,7 +226,7 @@
                     </div>
                     <div class="s-item" data-item-id="a2sdfa34">
                         <figure>
-                            <img src="/assets/images/100x100.jpg" alt="item name and description" />
+                            <img src="~/Images/100x100.jpg" alt="item name and description" />
                             <figcaption>
                                 <ul>
                                     <li class="s-item-price">600</li>
@@ -222,7 +240,7 @@
                     </div>
                     <div class="s-item" data-item-id="a2sdfa34">
                         <figure>
-                            <img src="/assets/images/100x100.jpg" alt="item name and description" />
+                            <img src="~/Images/100x100.jpg" alt="item name and description" />
                             <figcaption>
                                 <ul>
                                     <li class="s-item-price">600</li>
@@ -236,7 +254,7 @@
                     </div>
                     <div class="s-item" data-item-id="a2sdfa34">
                         <figure>
-                            <img src="/assets/images/100x100.jpg" alt="item name and description" />
+                            <img src="~/Images/100x100.jpg" alt="item name and description" />
                             <figcaption>
                                 <ul>
                                     <li class="s-item-price">600</li>
@@ -250,21 +268,7 @@
                     </div>
                     <div class="s-item" data-item-id="a2sdfa34">
                         <figure>
-                            <img src="/assets/images/100x100.jpg" alt="item name and description" />
-                            <figcaption>
-                                <ul>
-                                    <li class="s-item-price">600</li>
-                                    <li class="s-item-make">India gate basmati rice</li>
-                                    <li class="s-item-name">rice</li>
-                                    <li class="s-item-quantity">10kg</li>
-                                    <li class="s-item-vendor">shubham mart</li>
-                                </ul>
-                            </figcaption>
-                        </figure>
-                    </div>
-                    <div class="s-item" data-item-id="a2sdfa34">
-                        <figure>
-                            <img src="/assets/images/100x100.jpg" alt="item name and description" />
+                            <img src="~/Images/100x100.jpg" alt="item name and description" />
                             <figcaption>
                                 <ul>
                                     <li class="s-item-price">600</li>
