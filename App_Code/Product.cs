@@ -20,7 +20,7 @@ namespace NikatBazaar.ProductSpec
         [SolrField("name")]
         public string Name { get; set; }
 
-        [SolrField("manu_exact")]
+        [SolrField("make")]
         public string Manufacturer { get; set; }
 
         [SolrField("cat")]

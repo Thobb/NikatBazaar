@@ -1,4 +1,10 @@
-﻿<!DOCTYPE html>
+﻿@using NikatBazaar.NBSearch;
+@{
+    var search = new Search();
+    var searchItems = search.SearchExecute();
+    
+}
+<!DOCTYPE html>
     <html lang="en-US">
     <head>
         <meta charset="utf-8">
@@ -52,9 +58,7 @@
                     </div><!-- #s-presentation -->
                 </div><!-- #s-main-content-header -->
                 <div id="s-search-results">
-                    <%
-                        for(item in searchItems) {
-                    %>
+                    @foreach(string item in searchItems) {
                     <div class="s-item" data-item-id="a2sdfa34">
                         <figure>
                             <img src="@item.imagePath" alt="item name and description" />
@@ -69,7 +73,7 @@
                             </figcaption>
                         </figure>
                     </div>
-                    <% } %>
+                    }
                     <div class="s-item" data-item-id="a2sdfa34">
                         <figure>
                             <img src="~/Images/100x100.jpg" alt="item name and description" />
