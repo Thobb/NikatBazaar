@@ -15,7 +15,7 @@ using Newtonsoft.Json;
 /// Summary description for Search
 /// </summary>
 
-namespace NikatBazaar.NBSearch
+namespace NikatBazaar.Search
 {
     public class Search
     {

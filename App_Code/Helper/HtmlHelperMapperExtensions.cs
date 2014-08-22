@@ -27,7 +27,8 @@ namespace NikatBazaar.Helpers {
         }
 
         public static string SolrFieldPropName<T>(this HtmlHelper helper, string fieldName) {
-            return mapper.GetFields(typeof (T))[fieldName].Property.Name;
+            var fieldModel = (from x in mapper.GetFields(typeof(T)) where x.FieldName == fieldName select x).FirstOrDefault();
+            return fieldModel.Property.Name;
         }
     }
 }
