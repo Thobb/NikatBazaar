@@ -1,5 +1,49 @@
-﻿var app = {
+﻿var Make_A_List = {
+    ENTER_KEY_CODE: 13,
+    Init: function(){
+        if ($("#item-list > ul li").length == 0) {
+            Make_A_List.createNode(2);
+        }
+    },
+    createNode: function (numNodes) {
+        for (var i = 0; i < numNodes; i++) {
+            var node = $("#list-item-template li").clone();
+            $("#item-list > ul").append(node);
+            node.find('input').blur(function () {
+                $(this).hide(0);
+                $(this).next().find('span').html($(this).val());
+                $(this).next().show();
+                return false;
+            }).keypress(function (e) {
+                var moreListItems = ($(this).parent().next().next().prop('tagName') == 'LI');
+                if ((e.keyCode == Make_A_List.ENTER_KEY_CODE) && !moreListItems && ($(this).val() != '')) {
+                    $(this).hide();
+                    $(this).next().find('span').html($(this).val());
+                    $(this).next().find('p').show();
+                    $(this).parent().next().find('input').show().focus();
+                    Make_A_List.createNode(1);
+                    return false;
+                }
+            })
+            node.find('p').click(function () {
+                $(this).hide(0);
+                var val = $(this).prev().val();
+                $(this).prev().show(0).focus();
+                return false;
+            })
+            node.find('b').click(function () {
+                $(this).parent().parent().remove();
+                return false;
+            })
+        }
+    }
+}
+var app = {
+    reset: function() {
+        $('.item').val('');
+    },
     Init: function () {
+        app.reset();
         $("#searchButton").click(function () {
             $("#searchForm").submit();
         })
@@ -46,6 +90,9 @@
             e.preventDefault();
             return false;
         })
+        /* make a list */
+        Make_A_List.Init();
+        /* /make a list */
         /*  search page */
         $("#s-cat-side-nav a").click(function (e) {
             e.preventDefault();
