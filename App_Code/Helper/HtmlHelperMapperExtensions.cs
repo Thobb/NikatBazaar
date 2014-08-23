@@ -21,14 +21,16 @@ using SolrNet;
 using System.Web.WebPages.Html;
 
 namespace NikatBazaar.Helpers {
-    public static class HtmlHelperMapperExtensions {
-        private static IReadOnlyMappingManager mapper {
+    public static class HtmlHelperMapperExtensions
+    {
+        private static IReadOnlyMappingManager mapper
+        {
             get { return ServiceLocator.Current.GetInstance<IReadOnlyMappingManager>(); }
         }
 
-        public static string SolrFieldPropName<T>(this HtmlHelper helper, string fieldName) {
-            var fieldModel = (from x in mapper.GetFields(typeof(T)) where x.FieldName == fieldName select x).FirstOrDefault();
-            return fieldModel.Property.Name;
+        public static string SolrFieldPropName<T>(this HtmlHelper helper, string fieldName)
+        {
+            return mapper.GetFields(typeof(T))[fieldName].Property.Name;
         }
     }
 }

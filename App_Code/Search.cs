@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using SolrNet.Impl;
-using SolrNet.Commands.Parameters;
 using SolrNet.DSL;
+using SolrNet.Commands.Parameters;
 using SolrNet.Exceptions;
 using NikatBazaar.Search;
 using NikatBazaar.ProductSpec;
 using NikatBazaar.View;
 using SolrNet;
 using Newtonsoft.Json;
+using Microsoft.Practices.ServiceLocation;
 /// <summary>
 /// Summary description for Search
 /// </summary>
@@ -19,18 +20,12 @@ namespace NikatBazaar.Search
 {
     public class Search
     {
+        private readonly ISolrReadOnlyOperations<Product> solr;
         public Search()
         {
-            //
-            // TODO: Add constructor logic here
-            //
+            this.solr = ServiceLocator.Current.GetInstance<ISolrReadOnlyOperations<Product>>();            
         }
-        private readonly ISolrReadOnlyOperations<Product> solr;
 
-        public Search(ISolrReadOnlyOperations<Product> solr)
-        {
-            this.solr = solr;
-        }
 
         /// <summary>
         /// Builds the Solr query from the search parameters
@@ -102,7 +97,7 @@ namespace NikatBazaar.Search
                 };
                 return JsonConvert.SerializeObject(view);
             }
-            catch (InvalidFieldException)
+            catch (SolrNetException)
             {
                 return JsonConvert.SerializeObject(new ProductView
                 {
@@ -111,7 +106,7 @@ namespace NikatBazaar.Search
             }
         }
 
-        private string GetSpellCheckingResult(ISolrQueryResults<Product> products)
+        private string GetSpellCheckingResult(SolrQueryResults<Product> products)
         {
             return string.Join(" ", products.SpellChecking
                                         .Select(c => c.Suggestions.FirstOrDefault())

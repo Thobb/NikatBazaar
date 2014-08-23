@@ -20,10 +20,12 @@ using System.Linq.Expressions;
 using SolrNet;
 
 namespace NikatBazaar.Helpers {
-    public static class IReadOnlyMappingManagerExtensions {
-        public static string FieldName<T>(this IReadOnlyMappingManager mapper, Expression<Func<T, object>> property) {
+    public static class IReadOnlyMappingManagerExtensions
+    {
+        public static string FieldName<T>(this IReadOnlyMappingManager mapper, Expression<Func<T, object>> property)
+        {
             var propertyName = property.MemberName();
-            return (from x in mapper.GetFields(typeof(T)) select x).First(p => p.Property.Name == propertyName).FieldName;
+            return mapper.GetFields(typeof(T)).Values.First(p => p.Property.Name == propertyName).FieldName;
         }
     }
 }
