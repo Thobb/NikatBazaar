@@ -24,7 +24,7 @@ using NikatBazaar.Helpers;
 using NikatBazaar.Search;
 using System.Web;
 
-namespace SampleSolrApp.Models.Binders
+namespace NikatBazaar.Search.Binders
 {
     public class SearchParametersBinder 
     {
@@ -40,9 +40,9 @@ namespace SampleSolrApp.Models.Binders
 
         private static readonly Regex FacetRegex = new Regex("^f_", RegexOptions.Compiled | RegexOptions.IgnoreCase);
 
-        public object BindModel(HttpContext controllerContext)
+        public object BindModel(HttpRequest controllerContext)
         {
-            var qs = controllerContext.Request.QueryString;
+            var qs = controllerContext.QueryString;
             var qsDict = NVToDict(qs);
             var sp = new SearchParameters
             {

@@ -1,10 +1,13 @@
 ﻿@using NikatBazaar.Search;
+@using NikatBazaar.Search.Binders;
 @{
-    
-    var search = new Search();
-    
-    //var searchItems = search.SearchExecute();
 
+    var search = new Search();   
+    var searchParameters = new SearchParameters();
+    var binder = new SearchParametersBinder();
+    searchParameters = (SearchParameters)binder.BindModel(HttpContext.Current.Request);
+    var searchItems = search.SearchExecute(searchParameters);
+    
 }
 <!DOCTYPE html>
 <html lang="en-US">
@@ -23,7 +26,7 @@
     <header id="s-header">
         <form id="s-search-form" action="/nikatBazaar/search">
             <span>Look for</span>
-            <input type="text" placeholder="item name, e.g. pencil" name="itemSearchStr" id="itemSearchStr" />
+            <input type="text" placeholder=" " name="itemSearchStr" id="itemSearchStr" />
             <span id="s-searchButton">Search</span>
         </form>
         <div id="s-service-location"></div>
